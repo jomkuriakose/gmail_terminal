@@ -5,13 +5,9 @@ def iitm_gmail_send_msg(receiver_email, name, pwd):
     sender_email = "smtiitm@gmail.com"
     password = "qhiogbjtwdzgcima"
 
-    subject = "Access to Indic TTS Database"
-    body = f"Hi {name}\n\nHere are your login details\n\nUsername: {receiver_email}\nPassword: {pwd}.\n\nBest regards,\nTTS Team\nIIT Madras"
+    body = f"Hi {name}\n\nHere are your login details\n\nUsername: {receiver_email}\nPassword: {pwd}\n\nBest regards,\nTTS Team\nIIT Madras"
 
-    message = f"""\
-    Subject: {subject}
-
-    {body}"""
+    message = f"Subject: Indic TTS Database -- Access Details\n\n{body}"
 
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
