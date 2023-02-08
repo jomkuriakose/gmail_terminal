@@ -1,4 +1,5 @@
 import smtplib
+import sys
 
 def iitm_gmail_send_msg(receiver_email, name, pwd):
 
@@ -24,10 +25,14 @@ def iitm_gmail_send_msg(receiver_email, name, pwd):
         server.quit()
 
 if __name__ == "__main__":
-    receiver_email = 'gupta.ishika08@gmail.com'
-    name = 'Ishika Gupta'
-    pwd = 'asdfgh'
-    if iitm_gmail_send_msg(receiver_email, name, pwd):
-        print('Success')
+    if len(sys.argv) == 4:
+        receiver_email = sys.argv[1]
+        name = sys.argv[2]
+        pwd = sys.argv[3]
     else:
-        print('Error')
+        print('Command: python3 send_gmail.py <receiver_email> <name> <password>')
+        sys.exit()
+    if iitm_gmail_send_msg(receiver_email, name, pwd):
+        print('Done!!')
+    else:
+        print('Error!!')
