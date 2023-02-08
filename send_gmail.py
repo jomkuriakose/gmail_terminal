@@ -1,22 +1,33 @@
 import smtplib
 
-sender_email = "smtiitm@gmail.com"
-receiver_email = "gupta.ishika08@gmail.com"
-password = "qhiogbjtwdzgcima"
+def gmail_send_msg(receiver_email, name, pwd):
 
-message = """\
-Subject: Hi there
+    sender_email = "smtiitm@gmail.com"
+    password = "qhiogbjtwdzgcima"
 
-This message is sent from Python."""
+    subject = "Access to Indic TTS Database"
+    body = f"Hi {name}\n\nHere are your login details\n\nUsername: {receiver_email}\nPassword: {pwd}.\n\nBest regards,\nTTS Team\nIIT Madras"
 
-try:
-    server = smtplib.SMTP("smtp.gmail.com", 587)
-    server.ehlo()
-    server.starttls()
-    server.login(sender_email, password)
-    server.sendmail(sender_email, receiver_email, message)
-    print ('Email sent!')
-except Exception as e:
-    print ('Something went wrong...', e)
-finally:
-    server.quit()
+    message = f"""\
+    Subject: {subject}
+
+    {body}"""
+
+    try:
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.ehlo()
+        server.starttls()
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, message)
+        print ('Email sent!')
+        return True
+    except Exception as e:
+        print ('Something went wrong...', e)
+        return False
+    finally:
+        server.quit()
+
+if __name__ == "__main__":
+    receiver_email = 'gupta.ishika08@gmail.com'
+    name = 'Ishika Gupta'
+    pwd = 'asdfgh'
