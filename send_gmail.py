@@ -1,6 +1,6 @@
 import smtplib
 
-def gmail_send_msg(receiver_email, name, pwd):
+def iitm_gmail_send_msg(receiver_email, name, pwd):
 
     sender_email = "smtiitm@gmail.com"
     password = "qhiogbjtwdzgcima"
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     receiver_email = 'gupta.ishika08@gmail.com'
     name = 'Ishika Gupta'
     pwd = 'asdfgh'
-    if gmail_send_msg(receiver_email, name, pwd):
+    if iitm_gmail_send_msg(receiver_email, name, pwd):
         print('Success')
     else:
         print('Error')
