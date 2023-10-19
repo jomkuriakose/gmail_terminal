@@ -3,8 +3,8 @@ import sys
 
 def iitm_gmail_send_msg(receiver_email, name, pwd):
 
-    sender_email = "smtiitm@gmail.com"
-    password = "qhiogbjtwdzgcima"
+    sender_email = ""
+    password = ""
 
     body = f"Hi {name}\n\nHere are your login details\n\nUsername: {receiver_email}\nPassword: {pwd}\n\nBest regards,\nTTS Team\nIIT Madras"
 
